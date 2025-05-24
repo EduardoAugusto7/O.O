@@ -187,6 +187,6 @@ public class Voo {
     }
 
     public boolean temPrejuizo() {
-         return lista_passageiros.size() <= 5;
-}
+        return lista_passageiros.size() <= 5;
+    }
 }
