@@ -8,17 +8,19 @@ public class Aeroport {
 
     private String nome;
     private String localizacao;
-    private List<Voo> lista_voos = new ArrayList<>();
+    private List<Voo> voos = new ArrayList<>();
     private static Scanner input = new Scanner(System.in);
 
     public Aeroport() {
         this.nome = "";
         this.localizacao = "";
+        this.voos = new ArrayList<>();
     }
 
     public Aeroport(String nome, String localizacao) {
         this.nome = nome;
         this.localizacao = localizacao;
+        this.voos = new ArrayList<>();
     }
 
     public void preencher() {
@@ -38,31 +40,19 @@ public class Aeroport {
     }
 
     public void adicionarVoo(Voo voo) {
-        lista_voos.add(voo);
+        voos.add(voo);
         System.out.println("Voo adicionado com sucesso!");
     }
 
-    public void removerVoo(String numero) {
-        Voo encontrado = null;
-        for (Voo v : lista_voos) {
-            if (v.getNumDoVoo().equals(numero)) {
-                encontrado = v;
-                break;
-            }
-        }
-        if (encontrado != null) {
-            lista_voos.remove(encontrado);
-            System.out.println("Voo removido com sucesso.");
-        } else {
-            System.out.println("Voo não encontrado.");
-        }
+    public boolean removerVoo(Voo voo) {
+        return voos.remove(voo);
     }
 
     public void listarVoos() {
-        if (lista_voos.isEmpty()) {
+        if (voos.isEmpty()) {
             System.out.println("Nenhum voo cadastrado.");
         } else {
-            for (Voo v : lista_voos) {
+            for (Voo v : voos) {
                 System.out.println(v);
             }
         }
@@ -70,7 +60,7 @@ public class Aeroport {
 
     public List<Voo> calcularVoosComPrejuizo() {
         List<Voo> comPrejuizo = new ArrayList<>();
-        for (Voo v : lista_voos) {
+        for (Voo v : voos) {
             if (v.temPrejuizo()) {
                 comPrejuizo.add(v);
             }
@@ -79,10 +69,10 @@ public class Aeroport {
     }
 
     public void iniciarVoo(String numero) {
-        for (Voo v : lista_voos) {
+        for (Voo v : voos) {
             if (v.getNumDoVoo().equals(numero)) {
-                v.alterarEstadoDeVoo("Em andamento");
-                System.out.println("Voo iniciado com sucesso.");
+                v.setEstadoDeVoo("Em andamento");
+                System.out.println("Voo " + numero + " iniciado com sucesso.");
                 return;
             }
         }
@@ -91,7 +81,7 @@ public class Aeroport {
 
     @Override
     public String toString() {
-        return "Aeroport{" + "nome=" + nome + ", localizacao=" + localizacao + ", lista_voos=" + lista_voos + '}';
+        return "Aeroport{" + "nome=" + nome + ", localizacao=" + localizacao + ", lista_voos=" + voos + '}';
     }
 
     public String getNome() {
@@ -110,11 +100,11 @@ public class Aeroport {
         this.localizacao = localizacao;
     }
 
-    public List<Voo> getLista_voos() {
-        return lista_voos;
+    public List<Voo> getVoos() {
+        return voos;
     }
 
-    public void setLista_voos(List<Voo> lista_voos) {
-        this.lista_voos = lista_voos;
+    public void setVoos(List<Voo> voos) {
+        this.voos = voos;
     }
 }

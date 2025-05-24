@@ -3,13 +3,12 @@ package Classes;
 import java.util.Objects;
 import java.util.Scanner;
 
-
 public class Passageiro {
 
     private String nome;
     private String CPF;
-    private static Scanner leitor = new Scanner(System.in);
     private SistemaDePontosFidelidade sistemaFidelidade;
+    private static Scanner leitor = new Scanner(System.in);
 
     public Passageiro() {
         this.nome = " ";
@@ -17,30 +16,10 @@ public class Passageiro {
         this.sistemaFidelidade = new SistemaDePontosFidelidade();
     }
 
-     public SistemaDePontosFidelidade getSistemaFidelidade() {
-        return sistemaFidelidade;
-    }
-    
-    public void setSistemaFidelidade(SistemaDePontosFidelidade sistemaFidelidade) {
-        this.sistemaFidelidade = sistemaFidelidade;
-    }
-    
-    public Passageiro(String name, String CPF) {
-        this.nome = name;
-        this.CPF = CPF;
+    public Passageiro(String nome, String cpf) {
+        this.nome = nome;
+        this.CPF = cpf;
         this.sistemaFidelidade = new SistemaDePontosFidelidade();
-    }
-      
-    public void fill() {
-        System.out.println("informe seu nome: ");
-        this.nome = leitor.next();
-        System.out.println("informe seu cpf: ");
-        this.CPF = leitor.next();
-
-    }
-
-    public void print() {
-        System.out.println(this);
     }
 
     @Override
@@ -96,6 +75,14 @@ public class Passageiro {
     }
 
     public void setCPF(String cpf) {
-        this.CPF = CPF;
+        this.CPF = cpf;
+    }
+
+    public SistemaDePontosFidelidade getSistemaFidelidade() {
+        return this.sistemaFidelidade;
+    }
+
+    public void setSistemaFidelidade(SistemaDePontosFidelidade sistemaFidelidade) {
+        this.sistemaFidelidade = sistemaFidelidade;
     }
 }
