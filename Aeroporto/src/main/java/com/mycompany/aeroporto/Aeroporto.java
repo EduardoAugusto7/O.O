@@ -29,4 +29,5 @@ public class Aeroporto {
         }
        System.out.println("Pontos do passageiro: " + passageiro1.getSistemaFidelidade().retornaPontos());
     }
+    a
 }
