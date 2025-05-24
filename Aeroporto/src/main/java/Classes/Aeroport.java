@@ -23,13 +23,6 @@ public class Aeroport {
         this.voos = new ArrayList<>();
     }
 
-    public void preencher() {
-        System.out.println("Informe o nome do aeroporto:");
-        this.nome = input.nextLine();
-        System.out.println("Informe a localização:");
-        this.localizacao = input.nextLine();
-    }
-
     public void imprimir() {
         System.out.println(this);
     }
