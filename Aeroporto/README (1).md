@@ -33,7 +33,7 @@ Este sistema simula o gerenciamento de um aeroporto, permitindo:
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
    ```
-2. Importe o projeto em sua IDE Java (ex: NetBeans).
+2. Importe o projeto em sua IDE .
 3. Execute a classe `aeroporto/Aeroporto.java`, que contém o método `main`.
 
 ## 📊 Funcionalidades em Destaque
@@ -54,11 +54,11 @@ Este sistema simula o gerenciamento de um aeroporto, permitindo:
 
 ## 👨‍🏫 Professor(a)
 
-Disciplina orientada pelo(a) professor(a): *[Nome do professor]*
+Disciplina orientada pelo(a) professor(a): *Jose Rui Castro*
 
 ## 📅 Semestre
 
-Projeto desenvolvido no semestre: **[1º / 2º semestre de 2025]**
+Projeto desenvolvido no semestre: **[1º semestre de 2025]**
 
 ## 👥 Autores
 
