@@ -1,51 +1,61 @@
-
 package Classes;
 
 import java.util.Objects;
 import java.util.Scanner;
-import Classes.SistemaDePntosFidelidades;
+
 
 public class Passageiro {
-    private String name;
-    private String CPF; 
+
+    private String nome;
+    private String CPF;
     private static Scanner leitor = new Scanner(System.in);
-    private SistemaDePntosFidelidades sistemadefidelidade;
-    
-    public Passageiro(){
-    this.name = " ";
-    this.CPF = " ";
+    private SistemaDePontosFidelidade sistemaFidelidade;
+
+    public Passageiro() {
+        this.nome = " ";
+        this.CPF = " ";
+        this.sistemaFidelidade = new SistemaDePontosFidelidade();
     }
 
-    public Passageiro(String name, String CPF) {
-        this.name = name;
-        this.CPF = CPF;
+     public SistemaDePontosFidelidade getSistemaFidelidade() {
+        return sistemaFidelidade;
     }
     
-    public void fill(){
+    public void setSistemaFidelidade(SistemaDePontosFidelidade sistemaFidelidade) {
+        this.sistemaFidelidade = sistemaFidelidade;
+    }
+    
+    public Passageiro(String name, String CPF) {
+        this.nome = name;
+        this.CPF = CPF;
+        this.sistemaFidelidade = new SistemaDePontosFidelidade();
+    }
+      
+    public void fill() {
         System.out.println("informe seu nome: ");
-        this.name = leitor.next();
+        this.nome = leitor.next();
         System.out.println("informe seu cpf: ");
         this.CPF = leitor.next();
-    
+
     }
-     
-    public void print () {
-        System.out.println (this);
+
+    public void print() {
+        System.out.println(this);
     }
-     
+
     @Override
-   public String toString () {
-       return " Passenger{" +
-              " Name: " + name + " " +
-              " CPF: " + CPF + " " +
-              "}";
-              
-   }
+    public String toString() {
+        return " Passageiro{"
+                + " Nome: " + nome + " "
+                + " CPF: " + CPF + " "
+                + "}";
+
+    }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 37 * hash + Objects.hashCode(this.name);
+        hash = 37 * hash + Objects.hashCode(this.nome);
         hash = 37 * hash + Objects.hashCode(this.CPF);
         return hash;
     }
@@ -62,29 +72,30 @@ public class Passageiro {
             return false;
         }
         final Passageiro other = (Passageiro) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
         return Objects.equals(this.CPF, other.CPF);
     }
-   
-   public void copy ( Passageiro outro ) {
-       this.name = outro.getName();
-       this.CPF = outro.getCPF ();
-   }
-   
-   public String getName () {
-       return name;
-   }
-   
-   public void setName (String nome) {
-       this.name = name;
-   }
-   
-   public String getCPF () {
-       return CPF;
-   }
-   public void setCPF ( String cpf ){
-       this.CPF = CPF;
-   }
+
+    public void copy(Passageiro outro) {
+        this.nome = outro.getNome();
+        this.CPF = outro.getCPF();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String cpf) {
+        this.CPF = CPF;
+    }
 }
