@@ -13,7 +13,7 @@ public class Aeroporto {
         Voo voo1 = new Voo("BR123", "Nova York", 100, "Agendado");
         Voo voo2 = new Voo("BR951", "Frankfurt", 4, "Agendado");
         Voo voo3 = new Voo("BR034", "Toronto", 50, "Agendado");
-
+        
         voo1.adicionarEscalas("Miami");
         voo1.adicionarEscalas("Orlando");
         voo2.adicionarEscalas("Lisboa");
@@ -23,14 +23,24 @@ public class Aeroporto {
         Passageiro passageiro1 = new Passageiro("João Silva", "12345678900");
         Passageiro passageiro2 = new Passageiro("Carlos Mendes", "32165498700");
         Passageiro passageiro3 = new Passageiro("Fernanda Costa", "98745612399");
+        Passageiro passageiro4 = new Passageiro("João", "3948394898324");
+        Passageiro passageiro5 = new Passageiro("Silva", "12665548966");
+        Passageiro passageiro6 = new Passageiro("Daniel", "234234654");
+        Passageiro passageiro7 = new Passageiro("Igor", "12365678900");
+        Passageiro passageiro8 = new Passageiro("Ze", "122453665600");
 
         aeroporto.adicionarVoo(voo1);
         aeroporto.adicionarVoo(voo2);
         aeroporto.adicionarVoo(voo3);
 
         voo1.adicionarPassageiros(passageiro1);
-        voo2.adicionarPassageiros(passageiro2);
-        voo3.adicionarPassageiros(passageiro3);
+        voo1.adicionarPassageiros (passageiro2);
+        voo1.adicionarPassageiros (passageiro3);
+        voo1.adicionarPassageiros (passageiro4);
+        voo1.adicionarPassageiros (passageiro5);
+        voo1.adicionarPassageiros(passageiro6);
+        voo2.adicionarPassageiros(passageiro7);
+        voo2.adicionarPassageiros (passageiro8);
 
         aeroporto.iniciarVoo("BR123");
         voo1.alterarEstadoDeVoo("Concluído");
@@ -57,7 +67,7 @@ public class Aeroporto {
         }
 
         System.out.println("Pontos dos passageiros:");
-        List<Passageiro> lista_passageiros = Arrays.asList(passageiro1, passageiro2, passageiro3);
+        List<Passageiro> lista_passageiros = Arrays.asList(passageiro1, passageiro2, passageiro3, passageiro4, passageiro5, passageiro6, passageiro7, passageiro8 );
         for (Passageiro p : lista_passageiros) {
             System.out.println(p.getNome() + ": " + p.getSistemaFidelidade().retornaPontos() + " pontos");
         }
