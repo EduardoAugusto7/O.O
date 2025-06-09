@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gerenciadorDeCasa>
+    <lista_casa>
+        <banheiros>4</banheiros>
+        <preco>47777</preco>
+        <quartos>4</quartos>
+        <tipo>predio</tipo>
+    </lista_casa>
+    <lista_casa>
+        <banheiros>6</banheiros>
+        <preco>6000</preco>
+        <quartos>4</quartos>
+        <tipo>apartamento</tipo>
+    </lista_casa>
+    <lista_casa>
+        <banheiros>5</banheiros>
+        <preco>656464</preco>
+        <quartos>3</quartos>
+        <tipo>casa</tipo>
+    </lista_casa>
+</gerenciadorDeCasa>
